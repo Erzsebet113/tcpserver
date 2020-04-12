@@ -4,7 +4,7 @@ import logging
 
 TCP_IP = '127.0.0.1'
 TCP_PORT = 5005
-BUFFER_SIZE = 1024  # Normally 1024, but we want fast response
+BUFFER_SIZE = 1024
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind((TCP_IP, TCP_PORT))
 s.listen(1)
@@ -22,7 +22,7 @@ while 1:
 
     if result.group(4) == '00':
         showData = (f"Спортсмен, нагрудный номер: {result.group(1)} прошел отсечку {result.group(2)} в {result.group(3)[:-2]}")
-        conn.send(showData.encode())  # echo
+        conn.send(showData.encode())
 conn.close()
 
 conn, s.accept()
