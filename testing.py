@@ -1,5 +1,6 @@
 import logging
 
+
 resultData = "0002 C1 01:13:02.877 00"
 
 wrappedData = resultData.split(' ')
